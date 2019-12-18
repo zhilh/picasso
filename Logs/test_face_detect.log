@@ -1,0 +1,16 @@
+[2019-10-18 14:02:15,593] [INFO] Execl文件读取成功
+[2019-10-18 14:02:15,599] [INFO] Execl文件表头写入成功
+[2019-10-18 14:02:15,603] [DEBUG] Starting new HTTP connection (1): 172.13.2.163:80
+[2019-11-19 16:11:11,325] [INFO] Execl文件读取成功
+[2019-11-19 16:11:11,330] [INFO] Execl文件表头写入成功
+[2019-11-19 16:11:11,460] [DEBUG] Starting new HTTP connection (1): 172.13.2.163:80
+[2019-11-19 16:27:49,048] [INFO] Execl文件读取成功
+[2019-11-19 16:27:49,054] [INFO] Execl文件表头写入成功
+[2019-11-19 16:29:05,188] [INFO] Execl文件读取成功
+[2019-11-19 16:29:05,193] [INFO] Execl文件表头写入成功
+[2019-11-19 16:30:12,587] [INFO] Execl文件读取成功
+[2019-11-19 16:30:12,593] [INFO] Execl文件表头写入成功
+[2019-11-19 16:30:12,633] [INFO] Execl文件数据保存成功<D:\Python\projects\picasso\data//ret_face_detect.xls>
+[2019-11-21 14:43:49,244] [INFO] Execl文件读取成功
+[2019-11-21 14:43:49,257] [INFO] Execl文件表头写入成功
+[2019-11-21 14:43:49,404] [INFO] Execl文件数据保存成功<D:\Python\projects\picasso\data//ret_face_detect.xls>

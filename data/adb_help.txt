@@ -1,0 +1,63 @@
+﻿adb connect 192.168.10.24
+adb devices
+
+若链接的是夜神模拟器
+adb connect 127.0.0.1:62001
+=================
+可以通过aapt命令查找已知apk的 appPackage 和 appActivity
+aapt命令在SDK的build-tools目录下
+aapt dump badging d:\work\Rsic04.apk |findstr "package"
+aapt dump badging d:\work\Rsic04.apk |findstr "launchable-activity"
+=================
+adb tcpip 8888 更改电脑端链接android设备的端口
+===============================
+>adb install D:\work\zafk-1.0.2.apk 安装app，注意路径不能有中文
+
+==========================================
+#初始化的时候设置
+'unicodeKeyboard':True, #使用unicodeKeyboard的编码方式来发送字符串
+'resetKeyboard':True#将键盘给隐藏起来 
+
+command0 ='adb shell ime list -s'#列出手机所有的输入法
+command1 ='adb shell ime set io.appium.android.ime/.UnicodeIME'#appium输入法
+command2 ='adb shell ime set com.sohu.inputmethod.sogou/.SogouIME'#搜狗输入法
+command3='adb shell ime set com.baidu.input/.ImeService'#百度输入法
+
+os.system(command1)#使用appium键盘
+os.system(command2)#使用搜狗输入法
+==============================================
+
+如何让Android设备能使用adb 调试
+http://blog.sina.com.cn/s/blog_540316260101fuho.html
+首先在安卓设备上下载并安装一个安卓终端模拟器（Android Terminal Emulator）http://jackpal.github.com/Android-Terminal-Emulator/downloads/Term.apk
+打开此应用的界面。在里面输入如下的内容：
+su
+setprop service.adb.tcp.port 5555
+stop adbd
+start adbd
+==========================================
+
+将/data/local/tmp目录拉取到F盘
+F:\>adb pull /data/local/tmp
+
+将/data/local/tmp目录下的app-debug.apk文件拉取到F盘
+F:\>adb pull /data/local/tmp/app-debug.apk
+
+将当前目录下的app-debug.apk文件推送到手机的/data/local/tmp/目录下
+adb push app-debug.apk /data/local/tmp/
+==============================
+
+1. http://ask.testfan.cn/article/1200 Appium 各版本之间的区别
+2.  http://ask.testfan.cn/article/902  Appium 服务端安装-windows
+3.  http://ask.testfan.cn/article/1078 最新版本appium desktop版本安装使用（支持简单录制）
+4. http://ask.testfan.cn/article/1185 appium-desktop版本配置命令行运行服务（windows）
+5. http://ask.testfan.cn/article/1186 appium-desktop版本配置命令行运行服务（Mac）
+6.  http://ask.testfan.cn/article/925   如何安装appium(在npm安装总是出错时)
+7.  http://ask.testfan.cn/article/926   使用java编写appium测试用例(安卓app)
+8.  http://ask.testfan.cn/article/919  appium之settings、unicode、unlock的app每次安装问题处理
+9.  http://ask.testfan.cn/article/989  mac下使用appium桌面版启动inspector查看ios元素
+10.  http://ask.testfan.cn/article/1097  driver实例化的不同启动参数配置
+11. http://ask.testfan.cn/article/1112  appium测试微信公众号，基于安卓
+12. http://ask.testfan.cn/article/1121  appium新版本不再支持ByName定位了怎么办
+=================================
+

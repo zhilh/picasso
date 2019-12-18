@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+    <title>自动化测试报告</title> 
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+     
+<style type="text/css" media="screen"> 
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; } 
+table       { font-size: 100%; } 
+pre         { } 
+ 
+/* -- heading ---------------------------------------------------------------------- */ 
+h1 { 
+    font-size: 16pt; 
+    color: gray; 
+} 
+.heading { 
+    margin-top: 0ex; 
+    margin-bottom: 1ex; 
+} 
+ 
+.heading .attribute { 
+    margin-top: 1ex; 
+    margin-bottom: 0; 
+} 
+ 
+.button{   
+    border:1px solid #cccccc;   
+    cursor:pointer;   
+    margin:10px 5px;   
+    height:40px;   
+    text-align:center;   
+    border-radius: 4px;   
+    border-color: #636263 #464647 #A1A3A5;   
+    text-shadow: 0 1px 1px #F6F6F6;   
+    background-image: -moz-linear-gradient(center top, #D9D9D9, #A6A6A6 49%, #A6A6A6 50%);   
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #D9D9D9),color-stop(1, #A6A6A6));   
+}   
+ 
+.buttonText{   
+    position:relative;   
+    font-weight:bold;   
+    top:10px; 
+    color:#58595B;   
+}    
+ 
+.heading .description { 
+    margin-top: 4ex; 
+    margin-bottom: 6ex; 
+} 
+ 
+.panel .description{   
+    border:1px solid #CCCCCC;   
+    border-color: #636263 #464647 #A1A3A5;   
+    margin:10px 5px;   
+    height:165px;   
+    border-radius: 4px;   
+}   
+.scroll-item {   
+    position: relative;   
+    width: 100%;   
+    height: 32px;   
+    border-bottom:1px solid gray;   
+    cursor: pointer;   
+}   
+.item-even {   
+    background-color: #E7E8EC;   
+}   
+       
+.item-odd {   
+    background-color: #E0ECF6;   
+}   
+.rect {   
+    float: left;   
+    margin-top: 5px;   
+    margin-left: 5px;   
+    width: 20px;   
+    height: 20px;   
+    border-radius: 3px;   
+}   
+.item-text{   
+    margin-left: 5px;   
+    height: 100%;   
+    float: left;   
+    font-size: 14px;    
+    vertical-align: middle;   
+    display: inline-block;   
+    line-height: 30px;   
+}   
+ 
+.bg{   
+    position:absolute;   
+    height:97%;   
+    width:90%;   
+    overflow-x: hidden;   
+    overflow-y:hidden;   
+}   
+.panel{   
+    position:absolute;   
+    height:550px;   
+    width:850px;   
+    left:35px;   
+    top:45px;   
+    border-radius: 12px;   
+    background-image: -moz-linear-gradient(top,#EBEBEB, #BFBFBF);   
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1, #BFBFBF));   
+    }   
+.panel1{   
+    position:absolute;   
+    height:550px;   
+    width:200px;   
+    left:905px;   
+    top:45px;   
+    border-radius: 12px;   
+    background-image: -moz-linear-gradient(top,#EBEBEB, #BFBFBF);   
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1, #BFBFBF));   
+    }  
+.panelBg{   
+    position:absolute;   
+    height:600px;   
+    width:1100px;   
+    left:20px;   
+    top:20px;   
+    border-radius: 12px;   
+    background-color:#000000;   
+    opacity:0.5;   
+}   
+ 
+.title{   
+    border:1px solid green;   
+    position:relative;   
+    margin:5px;   
+    font-size:22px;   
+    font-weight:bold;   
+    text-align:center;   
+    color:#58595B;   
+}  
+ 
+.piechart{   
+    border:1px solid green;   
+    margin:5px;   
+    height:170px;   
+}  
+ 
+.barchart{   
+    border:1px solid green;   
+    margin:5px;   
+    height:170px;   
+}   
+ 
+.linechart{   
+    border:1px solid green;   
+    margin:5px;   
+    height:170px;   
+}  
+      
+.subTitle{   
+    border:1px solid green;   
+    margin:5px;    
+    font-size:14px;   
+    height:70px;   
+    font-weight:bold;   
+    text-indent:2em;   
+    color:#6D6E71;   
+}   
+ 
+/* -- css div popup ------------------------------------------------------------------------ */ 
+a.popup_link { 
+} 
+ 
+a.popup_link:hover { 
+    color: red; 
+} 
+ 
+.popup_window { 
+    display: none; 
+    position: relative; 
+    left: 0px; 
+    top: 0px; 
+    /*border: solid #627173 1px; */ 
+    padding: 10px; 
+    background-color: #E6E6D6; 
+    font-family: "Lucida Console", "Courier New", Courier, monospace; 
+    text-align: left; 
+    font-size: 8pt; 
+    width: 500px; 
+} 
+ 
+} 
+/* -- report ------------------------------------------------------------------------ */ 
+#show_detail_line { 
+    margin-top: 3ex; 
+    margin-bottom: 1ex; 
+} 
+#result_table { 
+    width: 80%; 
+    border-collapse: collapse; 
+    border: 1px solid #777; 
+} 
+#header_row { 
+    font-weight: bold; 
+    color: white; 
+    background-color: #777; 
+} 
+#result_table td { 
+    border: 2px solid #777; 
+    padding: 3px; 
+} 
+#total_row  { font-weight: bold; } 
+.passClass  { background-color: #6c6; } 
+.failClass  { background-color: #c60; } 
+.errorClass { background-color: #c00; } 
+.passCase   { color: #6c6; font-weight: bold;} 
+.failCase   { color: #c60; font-weight: bold; } 
+.errorCase  { color: #c00; font-weight: bold; } 
+.hiddenRow  { display: none; } 
+.testcase   { margin-left: 2em; } 
+ 
+#section1{   
+    border:1px solid green;   
+    position:relative;   
+    float:left;   
+    width:235px;   
+    height:530px;   
+    top:10px;   
+    left:10px;   
+}   
+#section2{   
+    border:1px solid green;   
+    position:relative;   
+    float:left;   
+    width:290px;   
+    height:530px;   
+    top:10px;   
+    left:20px;   
+}   
+#section3{   
+    border:1px solid green;   
+    position:relative;   
+    float:left;   
+    width:290px;   
+    height:530px;   
+    top:10px;   
+    left:30px;   
+}   
+#section4{   
+    border:1px solid green;   
+    position:relative;   
+    float:left;   
+    width:180px;   
+    height:530px;   
+    top:10px;   
+    left:10px;   
+}   
+ 
+/* -- ending ---------------------------------------------------------------------- */ 
+#ending { 
+} 
+ 
+</style> 
+ 
+</head> 
+<body style="background-color:#C0C0C0" > 
+<script language="javascript" type="text/javascript"><!-- 
+output_list = Array(); 
+ 
+/* level - 0:Summary; 1:Pass; 2:Fail; 3:Skip; 4:Error; 5:All */ 
+function showCase(level) { 
+    trs = document.getElementsByTagName("tr"); 
+    for (var i = 0; i < trs.length; i++) { 
+        tr = trs[i]; 
+        id = tr.id; 
+        if (id.substr(0,2) == 'Pt') { 
+            if (level == 1) { 
+                tr.className = ''; 
+            } 
+            else if(level == 5 ) { 
+                tr.className = ''; 
+            } 
+            else{ 
+                tr.className = 'hiddenRow'; 
+            } 
+        } 
+        if (id.substr(0,2) == 'Ft') { 
+            if (level == 2) { 
+                tr.className = ''; 
+            } 
+            else if(level == 5) { 
+                tr.className = ''; 
+            } 
+            else{ 
+                tr.className = 'hiddenRow'; 
+            } 
+        } 
+        if (id.substr(0,2) == 'St') { 
+            if (level == 3) { 
+                tr.className = ''; 
+            } 
+            else if(level == 5 ) { 
+                tr.className = ''; 
+            } 
+            else{ 
+                tr.className = 'hiddenRow'; 
+            } 
+        } 
+        if (id.substr(0,2) == 'Et') { 
+            if (level == 4) { 
+                tr.className = ''; 
+            } 
+            else if(level == 5 ) { 
+                tr.className = ''; 
+            } 
+            else{ 
+                tr.className = 'hiddenRow'; 
+            } 
+        } 
+    } 
+}
+ 
+function showClassDetail(cid, count) { 
+    var id_list = Array(count); 
+    var toHide = 1; 
+    for (var i = 0; i < count; i++) { 
+        tid0 = 't' + cid.substr(1) + '.' + (i+1); 
+        tid = 'F' + tid0; 
+        tr = document.getElementById(tid); 
+        if (!tr) { 
+            tid = 'P' + tid0; 
+            tr = document.getElementById(tid); 
+            if(!tr){ 
+                tid = 'E' + tid0; 
+                tr = document.getElementById(tid); 
+                if(!tr){
+                    tid = 'S' + tid0;
+                    tr = document.getElementById(tid); 
+                }
+            } 
+        } 
+        id_list[i] = tid; 
+        if (tr.className) { 
+            toHide = 0; 
+        } 
+    } 
+    for (var i = 0; i < count; i++) { 
+        tid = id_list[i]; 
+        if (toHide) { 
+            document.getElementById('div_'+tid).style.display = 'none' 
+            document.getElementById(tid).className = 'hiddenRow'; 
+        } 
+        else { 
+            document.getElementById(tid).className = ''; 
+        } 
+    } 
+} 
+ 
+ 
+function showTestDetail(div_id){ 
+    var details_div = document.getElementById(div_id) 
+    var displayState = details_div.style.display 
+    // alert(displayState) 
+    if (displayState != 'block' ) { 
+        displayState = 'block' 
+        details_div.style.display = 'block' 
+    } 
+    else { 
+        details_div.style.display = 'none' 
+    } 
+} 
+ 
+ 
+function html_escape(s) { 
+    s = s.replace(/&/g,'&'); 
+    s = s.replace(/</g,'<'); 
+    s = s.replace(/>/g,'>'); 
+    return s; 
+} 
+ 
+/* obsoleted by detail in <div> 
+function showOutput(id, name) { 
+    var w = window.open("", //url 
+                    name, 
+                    "resizable,scrollbars,status,width=800,height=450"); 
+    d = w.document; 
+    d.write("<pre>"); 
+    d.write(html_escape(output_list[id])); 
+    d.write("\n"); 
+    d.write("<a href='javascript:window.close()'>close</a>\n"); 
+    d.write("</pre>\n"); 
+    d.close(); 
+} 
+*/ 
+--></script> 
+ 
+<div class='heading'> 
+<h1>自动化测试报告</h1> 
+<p class='attribute'><strong>Start Time:</strong> 2019-07-11 13:43:06</p> 
+<p class='attribute'><strong>Duration:</strong> 0:04:38.371848</p> 
+<p class='attribute'><strong>Status:</strong> Pass 9</p> 
+ 
+<p class='description'>测试用例执行情况</p> 
+</div> 
+ 
+ 
+ 
+<p id='show_detail_line'>Show 
+<a href='javascript:showCase(0)'>Summary</a> 
+<a href='javascript:showCase(1)'>Pass</a> 
+<a href='javascript:showCase(2)'>Fail</a> 
+<a href='javascript:showCase(3)'>Skip</a> 
+<a href='javascript:showCase(4)'>Error</a> 
+<a href='javascript:showCase(5)'>All</a> 
+</p> 
+<table id='result_table'> 
+<colgroup> 
+<col align='left' /> 
+<col align='right' /> 
+<col align='right' /> 
+<col align='right' /> 
+<col align='right' /> 
+<col align='right' /> 
+</colgroup> 
+<tr id='header_row'> 
+    <td colspan='2'>Test Group/Test case</td> 
+    <td>Count</td> 
+    <td>Pass</td> 
+    <td>Fail</td> 
+    <td>Error</td>
+    <td>Skip</td> 
+    <td>CaseInfo</td> 
+    <td>screenshot</td> 
+</tr> 
+ 
+<tr class='passClass'> 
+    <td>case_id</td>
+    <td>test_loginPage.test_login: 登录页</td> 
+    <td>9</td> 
+    <td>9</td> 
+    <td>0</td> 
+    <td>0</td>
+    <td>0</td> 
+    <td><a href="javascript:showClassDetail('c1',9)">Detail</a></td>
+    <td>&nbsp;</td> 
+</tr> 
+ 
+<tr id='Pt1.1' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_1 </td>
+    <td class='passCase'><div class='testcase'>test_login_1</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.1')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.1' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.1').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.1: case_id:  test_loginPage.test_login.test_login_1 开始执行
+测试用例描述：账号密码为空
+账号：
+密码：
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_1 开始执行<br />
+测试用例描述：账号密码为空
+账号：
+密码：
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='Pt1.2' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_2 </td>
+    <td class='passCase'><div class='testcase'>test_login_2</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.2')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.2' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.2').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.2: case_id:  test_loginPage.test_login.test_login_2 开始执行
+测试用例描述：密码为空
+账号：zhilianghua
+密码：
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_2 开始执行<br />
+测试用例描述：密码为空
+账号：zhilianghua
+密码：
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='Pt1.3' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_3 </td>
+    <td class='passCase'><div class='testcase'>test_login_3</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.3')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.3' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.3').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.3: case_id:  test_loginPage.test_login.test_login_3 开始执行
+测试用例描述：账号为空
+账号：
+密码：YDjf12345678
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_3 开始执行<br />
+测试用例描述：账号为空
+账号：
+密码：YDjf12345678
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='Pt1.4' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_4 </td>
+    <td class='passCase'><div class='testcase'>test_login_4</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.4')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.4' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.4').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.4: case_id:  test_loginPage.test_login.test_login_4 开始执行
+测试用例描述：错误的账号错误的密码
+账号：dddddd
+密码：ddddddd
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_4 开始执行<br />
+测试用例描述：错误的账号错误的密码
+账号：dddddd
+密码：ddddddd
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='Pt1.5' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_5 </td>
+    <td class='passCase'><div class='testcase'>test_login_5</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.5')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.5' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.5').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.5: case_id:  test_loginPage.test_login.test_login_5 开始执行
+测试用例描述：正确的账号错误的密码
+账号：zhilianghua
+密码：dddddd
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_5 开始执行<br />
+测试用例描述：正确的账号错误的密码
+账号：zhilianghua
+密码：dddddd
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='Pt1.6' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_6 </td>
+    <td class='passCase'><div class='testcase'>test_login_6</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.6')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.6' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.6').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.6: case_id:  test_loginPage.test_login.test_login_6 开始执行
+测试用例描述：错误的账号正确的密码
+账号：dddddd
+密码：YDjf12345678
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_6 开始执行<br />
+测试用例描述：错误的账号正确的密码
+账号：dddddd
+密码：YDjf12345678
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='Pt1.7' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_7 </td>
+    <td class='passCase'><div class='testcase'>test_login_7</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.7')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.7' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.7').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.7: case_id:  test_loginPage.test_login.test_login_7 开始执行
+测试用例描述：账号大小写验证
+账号：zhiLianghua
+密码：YDjf12345678
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_7 开始执行<br />
+测试用例描述：账号大小写验证
+账号：zhiLianghua
+密码：YDjf12345678
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='Pt1.8' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_8 </td>
+    <td class='passCase'><div class='testcase'>test_login_8</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.8')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.8' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.8').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.8: case_id:  test_loginPage.test_login.test_login_8 开始执行
+测试用例描述：密码大小写验证
+账号：zhilianghua
+密码：Ydjf12345678
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_8 开始执行<br />
+测试用例描述：密码大小写验证
+账号：zhilianghua
+密码：Ydjf12345678
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='Pt1.9' class='hiddenRow'> 
+    <td  align='center'>test_loginPage.test_login.test_login_9 </td>
+    <td class='passCase'><div class='testcase'>test_login_9</div></td> 
+    <td colspan='5' align='center'> 
+ 
+    <!--css div popup start--> 
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_Pt1.9')" > 
+        pass</a> 
+ 
+    <div id='div_Pt1.9' class="popup_window"> 
+        <div style='text-align: right; color:red;cursor:pointer'> 
+        <a onfocus='this.blur();' onclick="document.getElementById('div_Pt1.9').style.display = 'none' " > 
+           [x]</a> 
+        </div> 
+        <pre> 
+         
+Pt1.9: case_id:  test_loginPage.test_login.test_login_9 开始执行
+测试用例描述：正确的账号正确的密码
+账号：zhilianghua
+密码：YDjf12345678
+结束执行
+ 
+ 
+        </pre> 
+    </div> 
+    <!--css div popup end--> 
+ 
+    </td> 
+    <td align='center'> 
+case_id:  test_loginPage.test_login.test_login_9 开始执行<br />
+测试用例描述：正确的账号正确的密码
+账号：zhilianghua
+密码：YDjf12345678
+结束执行<br />
+ 
+</td> 
+    <td align='center'><a hidden="hidden" href="" title="" target="_blank"> 查看截图</a></td>
+</tr> 
+ 
+<tr id='total_row'> 
+    <td colspan='2'>Total and Rate</td> 
+    <td>9</td> 
+    <td>9</td> 
+    <td>0</td> 
+    <td>0</td>
+    <td>0</td> 
+    <td>Proportion:9/9</td>
+    <td>&nbsp;</td> 
+</tr> 
+</table> 
+ 
+<div id='ending'> </div> 
+<div class="bg"> 
+                       <div class="panelBg"></div>   
+                       <div class="panel">  
+                       <div id="section1">  
+                           <div class="title">Pie Chart</div>   
+                           <div class="subTitle">This chart is to show the rate that statis of test cases</div>  
+                           <div class="piechart">    
+                               <canvas id="circle" width="225" height="168" onmousemove='javascript:drawCircle(9,0,0,0)'>your browser does not support the canvas tag</canvas> 
+                           </div>  
+                           <div class="description">   
+                           <div class="scroll-item item-even">   
+                               <div class="rect" style="background-color: #6c6; "></div>   
+                               <div class="item-text">Passcase:9</div>   
+                           </div>   
+                           <div class="scroll-item item-odd">   
+                               <div class="rect" style="background-color: #c60; "></div>   
+                               <div class="item-text">failcase:0</div>   
+                           </div>    
+                           <div class="scroll-item item-even">   
+                               <div class="rect" style="background-color: #6c6c6c; "></div>   
+                               <div class="item-text">skipcase:0</div>   
+                           </div>  
+                           <div class="scroll-item item-odd">   
+                               <div class="rect" style="background-color: #c00; "></div>   
+                               <div class="item-text">errorcase:0</div>   
+                           </div>  
+                           <div class="scroll-item item-even">     
+                           </div>  
+                       </div>  
+ 
+                       </div>   
+                       <div id="section2">   
+                       <div class="title">Bar Chart</div>   
+                           <div class="subTitle">This chart is to show the count that statis of test cases</div>  
+                           <div class="barchart">    
+                               <canvas id="bar" width="280" height="170" onclick='javascript:drawBar(9, 0,0, 0)'>your browser does not support the canvas tag</canvas> 
+                           </div>  
+                           <div class="description">   
+                           <div class="scroll-item item-even">   
+                               <div class="rect" style="background-color: #6c6; "></div>   
+                               <div class="item-text">Passcase:9</div>   
+                           </div>   
+                           <div class="scroll-item item-odd">   
+                               <div class="rect" style="background-color: #c60; "></div>   
+                               <div class="item-text">failcase:0</div>   
+                           </div>    
+                           <div class="scroll-item item-even">   
+                               <div class="rect" style="background-color: #6c6c6c; "></div>   
+                               <div class="item-text">skipcase:0</div>   
+                           </div>  
+                           <div class="scroll-item item-odd">   
+                               <div class="rect" style="background-color: #c00; "></div>   
+                               <div class="item-text">errorcase:0</div>   
+                           </div>  
+                           <div class="scroll-item item-even">     
+                           </div>  
+                       </div>  
+ 
+                       </div>   
+                       <div id="section3">  
+                        <div class="title">Line Chart</div>   
+                           <div class="subTitle">This chart is to show the rate that data of test cases</div>  
+                           <div class="linechart">    
+                               <canvas id="line" width="280" height="168" onclick='javascript:draw_line(9, 0, 0, 0)'>your browser does not support the canvas tag</canvas> 
+                           </div>  
+                           <div class="description">   
+                           <div class="scroll-item item-even">   
+                               <div class="rect" style="background-color: #6c6; "></div>   
+                               <div class="item-text">Passcase:9</div>   
+                           </div>   
+                           <div class="scroll-item item-odd">   
+                               <div class="rect" style="background-color: #c60; "></div>   
+                               <div class="item-text">failcase:0</div>   
+                           </div>    
+                           <div class="scroll-item item-even">   
+                               <div class="rect" style="background-color: #6c6c6c; "></div>   
+                               <div class="item-text">skipcase:0</div>   
+                           </div>  
+                           <div class="scroll-item item-odd">   
+                               <div class="rect" style="background-color: #c00; "></div>   
+                               <div class="item-text">errorcase:0</div>   
+                           </div>  
+                           <div class="scroll-item item-even">     
+                           </div>  
+                       </div>  
+ 
+                       </div> 
+                       </div> 
+                       <div class="panel1"> 
+                       <div id="section4"> 
+                           <a>9 Pass cases, 0 fail cases, 0 skiped cases, 0 error cases.</a> 
+                       </div> 
+                       </div> 
+                    </div> 
+</body> 
+</html> 
+<script type="text/javascript">  
+function drawCircle(pass, fail, skip, error){  
+    var color = ["#6c6","#c60","#6c6c6c","#c00"];   
+    var data = [pass,fail,skip,error];  
+    var canvas = document.getElementById("circle");   
+    var ctx = canvas.getContext("2d");   
+    var startPoint=0;   
+    for(var i=0;i<data.length;i++){   
+        ctx.fillStyle = color[i];   
+        ctx.beginPath();   
+        ctx.moveTo(112,84);    
+        ctx.arc(112,84,84,startPoint,startPoint+Math.PI*2*(data[i]/(data[0]+data[1]+data[2]+data[3])),false);   
+        ctx.fill();   
+        startPoint += Math.PI*2*(data[i]/(data[0]+data[1]+data[2]+data[3]));   
+    }   
+} 
+ 
+function FillRect(cxt, x1, y1, width, height, color) { 
+    cxt.fillStyle = color;  
+    cxt.fillRect(x1, y1, width, height); 
+}  
+ 
+function drawBar(pass, fail,skip, error){  
+ 
+    var color = ["#6c6","#c60","#6c6c6c","#c00"];   
+    var data = [pass,fail,skip,error]; 
+    var count = pass + fail + skip + error; 
+    var h =[10+(1 - pass/count)*148,10+(1 - fail/count)*148,10+(1 - skip/count)*148,10+(1 - error/count)*148]; 
+    var x = [30,90,150,210]; 
+    var y = [70,130,190,250]; 
+    var canvas = document.getElementById("bar");   
+    var ctx = canvas.getContext("2d"); 
+    DrawString(ctx, 'Count(c)', '', '', '', '', 15, 10) 
+    DrawLine(ctx,5,15,10,10,'black'); 
+    DrawLine(ctx,15,15,10,10,'black'); 
+    DrawLine(ctx,10,10,10,158,'black'); 
+    DrawLine(ctx,10,158,270,158,'black'); 
+    DrawLine(ctx,263,153,270,158,'black'); 
+    DrawLine(ctx,263,163,270,158,'black'); 
+    DrawString(ctx, 'Type(c)', '', '', '', '', 200, 160) 
+    for(var i=0;i<4;i++) { 
+        DrawLine(ctx,x[i],h[i],x[i],158,color[i]); 
+        DrawLine(ctx,x[i],h[i],y[i],h[i],color[i]); 
+        DrawLine(ctx,y[i],h[i],y[i],158,color[i]);  
+        DrawLine(ctx,(y[i]+x[i])/2,153,(y[i]+x[i])/2,158,color[i]); 
+        DrawString(ctx, data[i], '', color[i], '', '', (y[i]+x[i])/2, h[i]-15); 
+        FillRect(ctx, x[i], h[i], 40, 158-h[i], color[i]); 
+    } 
+}  
+ 
+function DrawP(ctx, P) { 
+    with (ctx) { 
+        moveTo(P[0],P[1]); 
+        lineTo(P[0]+1,P[1]+1); 
+     } 
+} 
+ 
+function DrawLine(cxt, x1, y1, x2, y2, color) { 
+ 
+    cxt.strokeStyle = color; 
+    cxt.beginPath(); 
+    cxt.moveTo(x1, y1); 
+    cxt.lineTo(x2, y2); 
+    cxt.stroke(); 
+} 
+ 
+function DrawString(cxt, text, font, color, align, v_align, x, y) { 
+    if (font == "") { 
+        cxt.font = "10px"; 
+    } 
+    else { 
+        cxt.font = font; 
+    } 
+    if (color == "") { 
+        cxt.fillStyle = "#000000"; 
+    } 
+    else { 
+        cxt.fillStyle = color; 
+    } 
+    if (align == "") { 
+        cxt.textAlign = "left"; 
+    } 
+    else { 
+        cxt.textAlign = align; 
+    } 
+    if (v_align == "") { 
+        cxt.textBaseline = "top"; 
+    } 
+    else { 
+        cxt.textBaseline = v_align; 
+    } 
+    cxt.fillText(text, x, y); 
+} 
+ 
+function draw_line(pass, fail, skip, error){  
+    var color = ["#6c6","#c60","#6c6c6c","#c00"];   
+    var data = [pass,fail,skip,error]; 
+    var count = pass + fail + skip + error; 
+    var x = [30,90,150,210]; 
+    var y = [70,130,190,250]; 
+    var h =[10+(1 - pass/count)*148,10+(1 - fail/count)*148,10+(1 - skip/count)*148,10+(1 - error/count)*148]; 
+    var canvas = document.getElementById("line");   
+    var ctx = canvas.getContext("2d"); 
+    DrawString(ctx, 'Count(c)', '', '', '', '', 15, 10) 
+    DrawLine(ctx,5,15,10,10,'black'); 
+    DrawLine(ctx,15,15,10,10,'black'); 
+    DrawLine(ctx,10,10,10,158,'black'); 
+    DrawLine(ctx,10,158,270,158,'black'); 
+    DrawLine(ctx,263,153,270,158,'black'); 
+    DrawLine(ctx,263,163,270,158,'black'); 
+    DrawString(ctx, 'Type(c)', '', '', '', '', 180, 160) 
+    for(var i=0;i<4;i++) { 
+        p = Array((y[i]+x[i])/2,h[i]); 
+        DrawP(ctx,p); 
+        DrawLine(ctx,(y[i]+x[i])/2,153,(y[i]+x[i])/2,158,color[i]); 
+        DrawString(ctx, data[i], '', color[i], '', '', (y[i]+x[i])/2, h[i]-15); 
+        if(i < 3) { 
+         
+            DrawLine(ctx,(y[i]+x[i])/2,h[i],(y[i+1]+x[i+1])/2,h[i+1],'black'); 
+             
+        } 
+         
+    } 
+     
+}  
+ 
+</script>   
