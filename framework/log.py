@@ -2,7 +2,8 @@
 '''
 Created on 2018年9月29日
 @author: 
-Description: 
+Description:  二次封装的日志库
+
 '''
 
 

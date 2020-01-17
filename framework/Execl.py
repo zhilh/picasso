@@ -10,8 +10,6 @@ Created on 2018年9月25日
 import os
 import xlrd
 from xlutils.copy import copy
-from asn1crypto._ffi import null
-
 
 
 class ExcelUtil(object):  
@@ -209,9 +207,9 @@ def testW(e):
     
 if __name__ == "__main__":
     pass
-    #xls= r'..//data//test.xls'
+    xls= r'..//data//test.xls'
     #f=testW(xls)    
-    #testR(f)
+    testR(xls)
  
     
     

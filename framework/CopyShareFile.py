@@ -1,7 +1,14 @@
 #-*- coding:utf-8 -*-
+'''
+Created on 2018年10月13日
+@author: zhilh
+Description: 局域网共享文件夹下文件copy
+    srcFilename: 源文件，若没有找到，系统返回提示信息 
+    desFilename: 本地存放目录文件夹，若没有找到，系统会返回提示信息，并创建这个目录文件夹
 
-import sys 
-import os 
+'''
+
+import os,sys 
 from datetime import datetime  
   
 def copyFileDir(srcFilename , desFilename):  
@@ -76,21 +83,16 @@ def runCopy(argv = sys.argv):
     copyFromSharePath(srcFilename,desFilename)  
 
 def test():    
-    hostIp = '192.168.0.72'  
-    sharePath = '\\TestSoftware\OpenHardwareMonitor'  
-    now_time = datetime.now().strftime('%Y-%m-%d')  
-    #filename = 'OpenHardwareMonitorLog-2017-10-30.csv'
-    filename="OpenHardwareMonitorLog-"+str(now_time)+".csv"  
-      
-    resultStr = []  
-    resultStr.append([])  
-    srcFilename = '\\\\' + hostIp + sharePath + '\\' + filename  
-    desFilename = 'temp\\download'  
+    import getcwd
+
+    srcFilename = 'D:\\work\\昆山\\WHCS_12_05_01.apk'  
+    desFilename = os.path.join(getcwd.get_cwd(),"download")  
       
     cmd = [  
         srcFilename,  
         desFilename  
     ]
+    print(cmd)
     runCopy(cmd) 
 
    
