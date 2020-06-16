@@ -5,4 +5,26 @@ web端自动化测试框架
 
 
 
-个人学习项目，部分代码端摘自网络，若有侵权请联系我删除
+web端自动化测试框架
+包括二次封装的selenium操作、测试用例参数化管理、测试报告展示、测试报告发送、操作日志封装
+
+目录结构
+picasso
+	api					  #接口测试，存放接口测试脚本
+	config				#参数配置，存放项目可配置参数
+	data					#测试数据，项目内所用的测试数据
+	dll					  #存放第三方程序dll文件，用于动态库接口调用测试
+	download		  #存放下载的数据，用于存放爬虫项目爬下来的数据
+	framework		  #存放web端自动化框架结构文件，二次封装类
+	img					  #测试报告所用到的图标，验证码图片存放位置
+	logs					#脚本运行日志，每个脚本都可以开启运行日志，默认存放到该文件夹
+	monitors			#服务器/客服端 性能测试脚本
+	pageobject		#web端自动化，页面元素定义
+	pageobjectApp	#app端自动化，页面元素定义
+	report					#测试输出报表
+	screenshots			#测试截图
+	testsuites			#web端自动化，测试用例组装
+	testsuitesApp		#app端自动化，测试用例组装
+	getcwd.py			  #获取项目根目录
+	RunAllTestCase.py			#根据规则加载testsuites下所有测试脚本，并运行
+	RunAllTestCaseApp.py	#根据规则加载testsuitesApp下所有测试脚本，并运行
